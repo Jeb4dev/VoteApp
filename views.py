@@ -79,12 +79,13 @@ def create():
 def vote(vote_id):
 
     voteobj = Vote.query.filter_by(id=vote_id).first()
-    answerlist = loads(voteobj.answers)
-    user_answers = loads(voteobj.user_answers)
-    total_votes = voteobj.popularity
 
     if not voteobj:
         abort(404)
+
+    answerlist = loads(voteobj.answers)
+    user_answers = loads(voteobj.user_answers)
+    total_votes = voteobj.popularity
 
     # Check if singed in and already voted
     voted = False
