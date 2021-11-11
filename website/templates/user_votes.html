@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}My votes - {% endblock %}
+{% block import_css %}
+<link href="{{url_for('static', filename='css/card.css' )}}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<section class="flex-sect" id="ivjox"  style="height:92.3vh;">
+  <div class="container-width" id="i9dxq">
+
+    <div class="flex-title" id="i4bn9">All votes that I have voted</div>
+    <br/>
+    <div class="flex-desc" id="idtpb">This part is not create yet. Time ran 2 quickly<br>-Jeb, Developer</div>
+    <a href="/account"><button>back</button></a>
+<!--    <div class="cards" id="iwudg">-->
+<!--      {% for i in range(vote|length) %}-->
+<!--      <a class="card-link" href="/votes/{{vote[i].id}}">-->
+<!--      <div class="card">-->
+<!--        <div class="card-header ch{{i+1}}" id="ic4pr">-->
+<!--        </div>-->
+<!--        <div class="card-body" id="i35j6">-->
+<!--          <div class="card-title" id="ipoe8" style="color:#eee;">{{vote[i].question}}<br/></div>-->
+<!--          <br>-->
+<!--          <div class="card-sub-title">{{vote[i].popularity}} Votes</div>-->
+<!--          <br>-->
+<!--          <div class="card-desc">Vote was created at {{vote[i].date}} GMT by {{vote[i].creator}}-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      </a>-->
+<!--      {% endfor %}-->
+<!--    </div>-->
+  </div>
+</section>
+{% endblock %}
+

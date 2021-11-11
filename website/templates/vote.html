@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% block title %}Vote - {% endblock %}
+{% block content %}
+<div class="formcontent">
+  {% if voted %}
+    <div id="iw5nr">{{question}}
+      <br/>
+    </div>
+    <form class="form" method="post">
+      <div class="form-group">
+        {%for i in range(answerlist|length)%}
+          <button type="button" class="already_voted" title="You have already voted." value="{{i}}">{{answerlist[i]}}</button>
+        {%endfor%}
+        <button class="check-results" name="check-results" value="yes">Already voted, Check results</button>
+      </div>
+    </form>
+  {% else %}
+    {% if auth_required and user.is_anonymous%}
+    <div id="iw5nr">This vote is requires authentication</div>
+    <div class="row">
+      <div class="cell">
+      </div>
+      <div class="cell">
+        <a href="/votes"><button class="account-btn">Back to Votes</button></a>
+      </div>
+      <div class="cell">
+      </div>
+    </div>
+    <div class="row">
+      <div class="cell">
+      </div>
+      <div class="cell">
+        <a href="/login"><button class="account-btn">Authenticate</button></a>
+      </div>
+      <div class="cell">
+      </div>
+    </div>
+
+    {% else%}
+    <div id="iw5nr">{{question}}
+      <br/>
+    </div>
+    <form class="form" method="post">
+      <div class="form-group">
+        {% if user.is_anonymous%}
+          <input type="text" placeholder="Type your name in order to vote as guest. Name will be shown in vote results." class="already_voted" name="voter" />
+        {% endif%}
+        <br>
+        <br>
+        {%for i in range(answerlist|length)%}
+          <button type="submit" class="button" name="ans{{i}}" title="Press any button to send your FINAL answer. Answer cannot be modified." value="{{i}}">{{answerlist[i]}}</button>
+        {%endfor%}
+      </div>
+    </form>
+    {% endif %}
+  {% endif %}
+  <p class="author">Vote created by {{creator}}</p>
+</div>
+{% endblock %}

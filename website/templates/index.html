@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% block title %}{% endblock %}
+{% block import_css %}
+<link href="{{url_for('static', filename='css/card.css' )}}" rel="stylesheet">
+{% endblock %}
+{% block content %}
+<div class="landing" id="icul">
+  <div class="container-width" id="iert">
+    <div class="lead-title" id="ias06">Vote Here
+    </div>
+    <div class="sub-lead-title">Give your vote in polls made by others. By registering, you can also make your own voting pools. After voting you will se, what others have voted.
+    </div>
+    <a class="lead-btn" href="/create">Create your first vote now
+    </a>
+    <br/>
+  </div>
+</div>
+<section class="flex-sect" id="ivjox">
+  <div class="container-width" id="i9dxq">
+
+    <div class="flex-title" id="i4bn9">Popular votes</div>
+    <br/>
+    <div class="flex-desc" id="idtpb">Give your vote to the most popular pools here.</div>
+
+    <div class="cards" id="iwudg">
+      {% for i in range(vote|length) %}
+      <a class="card-link" href="/votes/{{vote[i][0].id}}">
+      <div class="card">
+        <div class="card-header ch{{i+1}}" id="ic4pr">
+        </div>
+        <div class="card-body" id="i35j6">
+          <div class="card-title" id="ipoe8" style="color:#eee;">{{vote[i][0].question}}<br/></div>
+          <br>
+          <div class="card-sub-title">{{vote[i][0].popularity}} Votes</div>
+          <br>
+          <div class="card-desc">Vote was created at {{vote[i][0].date}} GMT by {{vote[i][0].creator}}
+          </div>
+        </div>
+      </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}
+

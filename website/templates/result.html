@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% block title %}Result - {% endblock %}
+{% block content %}
+
+<script>
+    function toggleVisible(className) {
+      var x = document.getElementById(className);
+      var bg = document.getElementById('form-content');
+      if (className === "individuals") {
+        if (x.style.display === "block") {
+            x.style.display = "none";
+            bg.style.height = "112vh";
+          } else {
+            x.style.display = "block";
+            bg.style.height =  "200vh";
+          }
+        } else {
+         if (x.style.display === "none") {
+            x.style.display = "block";
+          } else {
+            x.style.display = "none";
+          }
+        }
+    }
+</script>
+
+<div class="formcontent" id="form-content" style="height:112vh;">
+  <div id="result-q">Vote results</div>
+  <div id="result-q" style="font-size:20px;padding:1% 0 0 0;">Question: {{vote.question}}</div>
+
+  <div class="result-pie">
+      <img src="/static/images/result.png">
+  </div>
+  <div class="result-pie-mobile">
+      <img class="result-pie-img" src="/static/images/result.png">
+  </div>
+
+
+  <div class="row">
+        <div class="cell" >
+            <button class="account-btn" onclick="toggleVisible('individuals')" title="Click to Check how individuals voted."><p>Check how individuals voted</p></button>
+            <div id="individuals">
+              <li><p>How individuals voted</p></li>
+              <ul>
+                  {% for i in range(users_and_votes|length) %}
+                  <li><p>{{users_and_votes[i][0]}} : {{users_and_votes[i][1]}}</p></li>
+                  {% endfor %}
+              </ul>
+            </div>
+        </div>
+      <div class="cell" >
+            <button class="account-btn" onclick="toggleVisible('statics')" title="Click to view statics."><p>hide statics</p></button>
+            <div id="statics">
+              <p class="author">Vote ID: {{vote.id}}</p>
+              <p class="author">Total Answers: {{vote.popularity}}</p>
+              <p class="author">Vote created by {{vote.creator}}</p>
+              <p class="author">Vote created: {{vote.date}} GMT</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
