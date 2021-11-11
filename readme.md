@@ -3,7 +3,7 @@
 
 [![N|Solid](https://flask.palletsprojects.com/en/2.0.x/_images/flask-logo.png)](https://flask.palletsprojects.com/en/2.0.x/)
 
-[![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)]()
+[Live Demo](https://jeb-voteapp.herokuapp.com/)
 
 VoteApp is simple online voting web app made for pc, mobile browsing will not be great. 
 This was made as part of the weekly programming challenge hosted by [DevJam](https://discord.gg/CCJvVD3Edr).
