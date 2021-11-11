@@ -17,6 +17,13 @@ The project was made for learning purposes.
 - see what others have voted
 - vote results are shown as pie diagram
 
+Creating New Vote
+![image](https://user-images.githubusercontent.com/76889226/141230845-2ed34f77-4eaf-4bc5-be6a-ccccb4e4fd25.png)
+
+Vote Results
+![image](https://user-images.githubusercontent.com/76889226/141230928-fc12eaec-8353-4ddb-a122-9c3b9a7d2546.png)
+
+
 ## Tech
 
 Python libraries that VoteApp uses:
