@@ -16,7 +16,7 @@ class Vote(db.Model):
     user_answers = db.Column(db.String(1000), default="[]")
     popularity = db.Column(db.Integer, default=0)
     date = db.Column(db.DateTime(timezone=True), default=func.now())
-    creator = db.Column(db.Integer, db.ForeignKey('user.username'))
+    creator = db.Column(db.Integer, db.ForeignKey('user.id'))
     auth_required = db.Column(db.Boolean, default=False)
 
 
