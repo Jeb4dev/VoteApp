@@ -33,16 +33,19 @@ VoteApp requires [python 3.7+](https://www.python.org/downloads/) to run.
 
 Clone git repo
 ```sh
-git clone repo_url.git
+git clone https://github.com/JesperKauppinen/VoteApp.git
 ```
 
 After cloning or downloading this git repo, install required python libraries
 
 ```sh
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
-For production environments...
+run main.py
+```sh
+python3 main.py
+```
 
 
 ## Development
@@ -50,20 +53,6 @@ For production environments...
 Want to contribute? Great!
 Give feedback, suggest new features, maybe even create pull request.
 
-
-#### Building for source
-
-For production release:
-
-```sh
-gulp build --prod
-```
-
-Generating pre-built zip archives for distribution:
-
-```sh
-gulp build dist --prod
-```
 
 ## Credits
 - [GrapesJS] - Building templates without codings!
@@ -75,10 +64,6 @@ gulp build dist --prod
 ## License
 
 MIT
-
-**Free Software, Hell Yeah!**
-
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen. Thanks SO - http://stackoverflow.com/questions/4823468/store-comments-in-markdown-syntax)
 
    [GrapesJS]: <https://grapesjs.com/>
    [Coolors]: <https://coolors.co/>
