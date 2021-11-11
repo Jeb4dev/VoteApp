@@ -7,7 +7,7 @@ from matplotlib import use
 
 
 from __init__ import db
-from models import Vote
+from models import Vote, User
 
 
 """     This file handle vote logic:
@@ -82,6 +82,13 @@ def vote(vote_id):
 
     if not voteobj:
         abort(404)
+
+    # hotfix to show username as creator.
+    try:
+        user_obj = User.query.filter_by(id=voteobj.creator).first()
+        creator = user_obj.username
+    except:
+        creator = "Error occurred"
 
     answerlist = loads(voteobj.answers)
     user_answers = loads(voteobj.user_answers)
@@ -194,6 +201,13 @@ def result(vote_id):
 
     pie_labels = tuple(pie_labels)
 
+    # hotfix to show username as creator.
+    try:
+        user_obj = User.query.filter_by(id=vote_object.creator).first()
+        creator = user_obj.username
+    except:
+        creator = "Error occurred"
+
     figure_object, axes_object = plotter.subplots()
 
     # Colors for
@@ -227,4 +241,4 @@ def result(vote_id):
     plotter.savefig('static/images/result.png', transparent=True)
     plotter.close()
 
-    return render_template("result.html", vote=vote_object, users_and_votes=users_votes)
+    return render_template("result.html", vote=vote_object, users_and_votes=users_votes, creator=creator)
