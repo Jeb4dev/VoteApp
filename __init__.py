@@ -10,7 +10,9 @@ DB_NAME = "database.db"
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'ADD_SECRET_KEY'
-    app.config['SQLALCHEMY_DATABASE_URI'] = environ.get('DATABASE_URL', f'sqlite:///{DB_NAME}')
+    db_url = environ.get("DATABASE_URL")
+    db_url = f"postgresql{db_url[8:]}"
+    app.config['SQLALCHEMY_DATABASE_URI'] = environ.get(db_url, f'sqlite:///{DB_NAME}')
     # app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
