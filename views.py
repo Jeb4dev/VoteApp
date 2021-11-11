@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, flash, redirect, url_for
+from flask import Blueprint, render_template, request, flash, redirect, url_for, abort
 from flask_login import current_user
 
 from json import dumps, loads
@@ -83,6 +83,9 @@ def vote(vote_id):
     user_answers = loads(voteobj.user_answers)
     total_votes = voteobj.popularity
 
+    if not voteobj:
+        abort(404)
+
     # Check if singed in and already voted
     voted = False
     if current_user.is_authenticated:
@@ -153,6 +156,8 @@ def votes():
 def result(vote_id):
     # Define db object
     vote_object = Vote.query.filter_by(id=vote_id).first()
+    if not vote_object:
+        abort(404)
 
     # individuals with their votes  [name, answer]
     users_votes = []
