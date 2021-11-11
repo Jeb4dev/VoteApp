@@ -13,15 +13,15 @@ def create_app():
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
     db.init_app(app)
 
-    from .views import views
-    from .account import account
-    from .auth import auth
+    from views import views
+    from account import account
+    from auth import auth
 
     app.register_blueprint(views, url_prefix='/')
     app.register_blueprint(account, url_prefix='/')
     app.register_blueprint(auth, url_prefix='/')
 
-    from .models import User, Vote
+    from models import User, Vote
 
     create_database(app)
 
@@ -48,7 +48,7 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists('website/' + DB_NAME):
+    if not path.exists('VoteApp/' + DB_NAME):
         db.create_all(app=app)
         print('Created Database!')
 
