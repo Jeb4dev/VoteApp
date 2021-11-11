@@ -16,6 +16,8 @@ The project was made for learning purposes.
 - decide if users must be authenticated to vote 
 - see what others have voted
 - vote results are shown as pie diagram
+- custom 404 page
+- notifications
 
 Creating New Vote
 ![image](https://user-images.githubusercontent.com/76889226/141230845-2ed34f77-4eaf-4bc5-be6a-ccccb4e4fd25.png)
@@ -65,6 +67,7 @@ Give feedback, suggest new features, maybe even create pull request.
 - [GrapesJS] - Building templates without codings!
 - [Coolors] - Color palette for pie diagram.
 - [Dillinger] - Template for readme.md
+- [Codepen.io] - 404 page template
 
 
 
@@ -79,3 +82,5 @@ MIT
    [Flask login]: <https://flask-login.readthedocs.io/en/latest/>
    [Flask-SQLAlchemy]: <https://flask-sqlalchemy.palletsprojects.com/en/2.x/>
    [matplotlib]: <https://matplotlib.org/>
+   [Codepen.io]: <https://codepen.io/Tibixx/pen/GRKmppz>
+   
