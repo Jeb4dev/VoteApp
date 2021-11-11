@@ -68,3 +68,7 @@ MIT
    [GrapesJS]: <https://grapesjs.com/>
    [Coolors]: <https://coolors.co/>
    [Dillinger]: <https://dillinger.io/>
+   [Flask]: <https://flask.palletsprojects.com/en/2.0.x/>
+   [Flask login]: <https://flask-login.readthedocs.io/en/latest/>
+   [Flask-SQLAlchemy]: <https://flask-sqlalchemy.palletsprojects.com/en/2.x/>
+   [matplotlib]: <https://matplotlib.org/>
