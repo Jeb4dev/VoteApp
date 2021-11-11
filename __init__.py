@@ -54,9 +54,12 @@ def create_app():
 
 
 def create_database(app):
-    if not path.exists('VoteApp/' + DB_NAME):
+    crete_db = False
+    if crete_db:
         db.create_all(app=app)
-        print('Created Database!')
+    # if not path.exists('VoteApp/' + DB_NAME):
+    #     db.create_all(app=app)
+    #     print('Created Database!')
 
 
 
