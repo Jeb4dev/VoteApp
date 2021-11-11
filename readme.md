@@ -6,7 +6,7 @@
 [Live Demo](https://jeb-voteapp.herokuapp.com/)
 
 VoteApp is simple online voting web app made for pc, mobile browsing will not be great. 
-This was made as part of the weekly programming challenge hosted by [DevJam](https://discord.gg/CCJvVD3Edr).
+This was made as part of the weekly programming challenge hosted by [DevJam].
 The project was made for learning purposes.
 
 ## Features
@@ -68,6 +68,9 @@ Give feedback, suggest new features, maybe even create pull request.
 - [Coolors] - Color palette for pie diagram.
 - [Dillinger] - Template for readme.md
 - [Codepen.io] - 404 page template
+### Special thanks
+- [mihett05] - Huge help with heroku and changing sqlite to postresql, db that [heroku] uses
+- [DevJam] - Discord server community
 
 
 
@@ -83,4 +86,7 @@ MIT
    [Flask-SQLAlchemy]: <https://flask-sqlalchemy.palletsprojects.com/en/2.x/>
    [matplotlib]: <https://matplotlib.org/>
    [Codepen.io]: <https://codepen.io/Tibixx/pen/GRKmppz>
+   [mihett05]: <https://github.com/mihett05>
+   [heroku]: <https://www.heroku.com/>
+   [DevJam]: <https://discord.gg/CCJvVD3Edr>
    
