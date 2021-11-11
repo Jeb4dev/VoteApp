@@ -87,6 +87,7 @@ def vote(vote_id):
     try:
         user_obj = User.query.filter_by(id=voteobj.creator).first()
         creator = user_obj.username
+        print(creator)
     except:
         creator = "Error occurred"
 
@@ -149,7 +150,7 @@ def vote(vote_id):
         # render result page
         return redirect(url_for('views.result', vote_id=vote_id))
     return render_template("vote.html", user=current_user, question=voteobj.question, answerlist=answerlist,
-                           voted=voted, creator=voteobj.creator, auth_required=voteobj.auth_required)
+                           voted=voted, creator=creator, auth_required=voteobj.auth_required)
 
 
 # All votes page
@@ -202,11 +203,12 @@ def result(vote_id):
     pie_labels = tuple(pie_labels)
 
     # hotfix to show username as creator.
+    creator = "Error occurred"
     try:
         user_obj = User.query.filter_by(id=vote_object.creator).first()
         creator = user_obj.username
     except:
-        creator = "Error occurred"
+        pass
 
     figure_object, axes_object = plotter.subplots()
 
