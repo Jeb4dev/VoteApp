@@ -49,9 +49,9 @@ After cloning or downloading this git repo, install required python libraries
 pip install -r requirements.txt
 ```
 
-run main.py
+run app.py
 ```sh
-python3 main.py
+python3 app.py
 ```
 
 
