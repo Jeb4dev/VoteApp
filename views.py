@@ -65,7 +65,7 @@ def create():
             creator = current_user.username
         else:
             creator = "Guest"
-        new_vote = Vote(question=question, answers=answers_in_json, creator=creator, auth_required=require_auth)
+        new_vote = Vote(question=question, answers=answers_in_json, creator=current_user.id, auth_required=require_auth)
         db.session.add(new_vote)
         db.session.commit()
         vote_id = new_vote.id
