@@ -6,8 +6,8 @@ from matplotlib import pyplot as plotter
 from matplotlib import use
 
 
-from . import db
-from .models import Vote
+from __init__ import db
+from models import Vote
 
 
 """     This file handle vote logic:

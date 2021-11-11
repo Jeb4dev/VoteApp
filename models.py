@@ -1,7 +1,7 @@
 from flask_login import UserMixin
 from sqlalchemy.sql import func
 
-from . import db
+from __init__ import db
 
 
 """     This file handle db objects:
