@@ -9,7 +9,7 @@ DB_NAME = "database.db"
 
 def create_app():
     app = Flask(__name__)
-    app.config['SECRET_KEY'] = 'ADD_SECRET_KEY'
+    app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY') or 'nald%!nldKLQWH19GBD2ldfkwADZ612EMN'
     db_url = environ.get("DATABASE_URL")
     if db_url is not None:
         db_url = f"postgresql{db_url[8:]}"
